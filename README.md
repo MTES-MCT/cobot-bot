@@ -47,7 +47,7 @@ npm run dev
 # Note
 Lors du démarrage du serveur, le bot lance une tâche "cron" permettant d'intéragir avec les utilisateurs. Cette tâche est lancée tous les jours du Lundi au Vendredi à 12h15 et vérifie la liste des utilisateurs disponible. La fréquence d'exécution de cette tâche est modifiable dans `src/lib/bot/scheduledJob.js`
 
-Pour faciliter le dévelopement local du bot et compte tenu des besoins de configuration de Slack, nous vous conseillons d'utiliser [https://ngrok.com](ngrok) qui vous permettra de créer un tunnel pour vos applications locales.
+Pour faciliter le dévelopement local du bot et compte tenu des besoins de configuration de Slack, nous vous conseillons d'utiliser [ngrok](https://ngrok.com) qui vous permettra de créer un tunnel pour vos applications locales.
 
 # Slack API
 Documentation : [https://api.slack.com](https://api.slack.com)
