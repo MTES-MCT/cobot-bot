@@ -9,7 +9,7 @@ class Play {
 
   async index() {
     try {
-      const data = await this.API.dataset.fetch('steetco');
+      const data = await this.API.dataset.fetch('steetco2');
       if (data) {
         const actions = [];
         await Promise.map(data.availableAnswers, (answer) => {
