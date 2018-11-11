@@ -9,7 +9,7 @@ class Play {
 
   async index() {
     try {
-      const data = await this.API.dataset.fetch('steetco2');
+      const data = await this.API.dataset.fetch('streetco2');
       if (data) {
         const actions = [];
         await Promise.map(data.availableAnswers, (answer) => {
@@ -20,7 +20,6 @@ class Play {
             value: `${data._id}|${answer.text}`,
           });
         });
-
         const attachments = [{
           text: [{ text: data.question }],
           image: `${process.env.API_URL}/img/${data.file}`,
@@ -31,6 +30,7 @@ class Play {
         this.Slack.post('', attachments);
       }
     } catch (error) {
+      console.log('errror');
       this.Logger.log('error', error);
     }
   }

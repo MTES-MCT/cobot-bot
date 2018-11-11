@@ -4,6 +4,7 @@ module.exports = {
   env: process.env.NODE_ENV || 'development',
   port: process.env.PORT || 3022,
   website_url: process.env.WEBSITE,
+  labelbot: process.env.LABELBOT,
   bot: {
     email: process.env.BOT_EMAIL,
     password: process.env.BOT_PASSWORD,

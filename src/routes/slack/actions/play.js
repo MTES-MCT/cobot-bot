@@ -13,7 +13,7 @@ class Play {
     Logger.log('debug', 'Action was called with value "%s"', value);
     if (value === 'yes') {
       // WARNING: Duplicate code from commands/play
-      const data = await this.API.dataset.fetch('streetco');
+      const data = await this.API.dataset.fetch('streetco2');
       if (data) {
         const actions = [];
         await Promise.map(data.availableAnswers, (answer) => {

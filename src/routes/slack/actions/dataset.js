@@ -1,4 +1,5 @@
 import Promise from 'bluebird';
+import _ from 'lodash';
 import Logger from '../../../utils/logger';
 
 class DataSet {
@@ -27,15 +28,15 @@ class DataSet {
           break;
         }
         default: {
-          if (userActivity.activity.slotNumAnswers > 5) {
+          if (userActivity.activity.slotNumAnswers > 500) {
             const message = await this.API.messages.fetch('slotLimitReach');
             this.Slack.post(message.text[0].text, message.attachments);
             userActivity.activity.slotNumAnswers = 0;
             await this.API.users.updateUserActivity(userActivity.id, userActivity.activity);
           } else {
             // WARNING: Duplicate code from commands/play
-            const data = await this.API.dataset.fetch('streetco');
-            if (data) {
+            const data = await this.API.dataset.fetch('streetco2');
+            if (userAnswer === 'aucun' && data) {
               const actions = [];
               await Promise.map(data.availableAnswers, (answer) => {
                 actions.push({
@@ -53,6 +54,14 @@ class DataSet {
                 actions,
               }];
               this.Slack.post('', attachments);
+            } else if (data) {
+              const message = await this.API.messages.fetch('labelbot');
+              const yesAnswers = _.find(
+                message.attachments[0].actions,
+                action => action.value === 'yes',
+              );
+              yesAnswers.value = `${data._id}/${userAnswer}`;
+              this.Slack.post(message.text[0].text, message.attachments);
             }
           }
         }
