@@ -17,7 +17,7 @@ class Play {
             name: 'datasetBtn',
             text: answer.text,
             type: 'button',
-            value: `${data._id}|${answer.text}`,
+            value: `${data._id}|${answer.text}|${data.file}`,
           });
         });
         const attachments = [{

@@ -60,7 +60,7 @@ class DataSet {
                 message.attachments[0].actions,
                 action => action.value === 'yes',
               );
-              yesAnswers.value = `${data._id}/${userAnswer}`;
+              yesAnswers.value = `${data._id}/${userAnswer}/${value[2]}`;
               this.Slack.post(message.text[0].text, message.attachments);
             }
           }

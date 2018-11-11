@@ -18,7 +18,7 @@ class Labelbot {
     } else {
       const message = await this.API.messages.fetch('labelbotopen');
       const base64 = Base64.encodeURI(`${value}/${user.name}`);
-      message.text[0].text += ` ${config.labelbot}/${base64}`;
+      message.text[0].text += ` ${config.labelbot}/#/home/${base64}`;
       this.Slack.post(message.text[0].text, message.attachments);
     }
   }
