@@ -36,6 +36,8 @@ class DataSet {
           } else {
             // WARNING: Duplicate code from commands/play
             const data = await this.API.dataset.fetch('streetco2');
+            const afile = data.file.split('.');
+            const file = `${afile[0]}_x480.${afile[1]}`;
             if (userAnswer === 'aucun' && data) {
               const actions = [];
               await Promise.map(data.availableAnswers, (answer) => {
@@ -48,7 +50,7 @@ class DataSet {
               });
               const attachments = [{
                 text: [{ text: data.question }],
-                image: `${process.env.API_URL}/img/${data.file}`,
+                image: `${process.env.API_URL}/img/${file}`,
                 callback: 'dataset_answers',
                 color: '#4598E6',
                 actions,

@@ -11,6 +11,8 @@ class Play {
     try {
       const data = await this.API.dataset.fetch('streetco2');
       if (data) {
+        const afile = data.file.split('.');
+        const file = `${afile[0]}_x480.${afile[1]}`;
         const actions = [];
         await Promise.map(data.availableAnswers, (answer) => {
           actions.push({
@@ -22,7 +24,7 @@ class Play {
         });
         const attachments = [{
           text: [{ text: data.question }],
-          image: `${process.env.API_URL}/img/${data.file}`,
+          image: `${process.env.API_URL}/img/${file}`,
           callback: 'dataset_answers',
           color: '#FF0000',
           actions,
