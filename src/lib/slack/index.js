@@ -29,13 +29,14 @@ class Slack {
 
   async post(text, attachments) {
     const parsedAttachements = await parseAttachments(attachments);
+    console.log(parsedAttachements);
     try {
       Logger.log('verbose', 'PostMessage to ChannelId %s', this.channelId);
-      const response = await this.slack.chat.postMessage(
-        this.channelId,
+      const response = await this.slack.chat.postMessage({
+        channel: this.channelId,
         text,
-        { attachments: parsedAttachements },
-      );
+        attachments: parsedAttachements,
+      });
       return response;
     } catch (error) {
       Logger.log('error', 'Unable to PostMessage to user identified by ChannelId %s : %s', this.channelId, JSON.stringify(error));
