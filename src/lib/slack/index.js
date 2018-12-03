@@ -29,7 +29,6 @@ class Slack {
 
   async post(text, attachments) {
     const parsedAttachements = await parseAttachments(attachments);
-    console.log(parsedAttachements);
     try {
       Logger.log('verbose', 'PostMessage to ChannelId %s', this.channelId);
       const response = await this.slack.chat.postMessage({
