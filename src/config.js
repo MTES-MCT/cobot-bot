@@ -20,4 +20,8 @@ module.exports = {
     redirect_uri: process.env.SLACK_REDIRECT_URI,
     commands: ['onboarding', 'play'],
   },
+  rocket_chat: {
+    bot_name: process.env.ROCKETCHAT_USER,
+    bot_password: process.env.ROCKETCHAT_PASSWORD,
+  },
 };

@@ -1,4 +1,4 @@
-
+import '@babel/polyfill';
 import restify from 'restify';
 import restifyPlugins from 'restify-plugins';
 import corsMiddleware from 'restify-cors-middleware';

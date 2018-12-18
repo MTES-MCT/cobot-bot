@@ -1,0 +1,16 @@
+{"message":"[adapter] startup failed: Asteroid connection timeout","level":"error","timestamp":"2018-12-03T16:53:31.583Z"}
+{"message":"[core] failed to start","level":"error","timestamp":"2018-12-03T16:53:31.584Z"}
+{"message":"[adapter] startup failed: Asteroid connection timeout","level":"error","timestamp":"2018-12-03T16:55:10.443Z"}
+{"message":"[core] failed to start","level":"error","timestamp":"2018-12-03T16:55:10.444Z"}
+{"message":"[adapter] startup failed: Asteroid connection timeout","level":"error","timestamp":"2018-12-03T17:04:19.210Z"}
+{"message":"[core] failed to start","level":"error","timestamp":"2018-12-03T17:04:19.210Z"}
+{"message":"[adapter] startup failed: User not found [403]","level":"error","timestamp":"2018-12-03T17:04:24.951Z"}
+{"message":"[core] failed to start","level":"error","timestamp":"2018-12-03T17:04:24.951Z"}
+{"message":"[adapter] startup failed: User not found [403]","level":"error","timestamp":"2018-12-03T17:06:30.860Z"}
+{"message":"[core] failed to start","level":"error","timestamp":"2018-12-03T17:06:30.860Z"}
+{"message":"[adapter] startup failed: User not found [403]","level":"error","timestamp":"2018-12-03T17:07:22.535Z"}
+{"message":"[core] failed to start","level":"error","timestamp":"2018-12-03T17:07:22.536Z"}
+{"message":"[adapter] startup failed: Asteroid connection timeout","level":"error","timestamp":"2018-12-17T09:59:20.226Z"}
+{"message":"[core] failed to start","level":"error","timestamp":"2018-12-17T09:59:20.226Z"}
+{"message":"[adapter] startup failed: Asteroid connection timeout","level":"error","timestamp":"2018-12-17T10:01:43.794Z"}
+{"message":"[core] failed to start","level":"error","timestamp":"2018-12-17T10:01:43.795Z"}

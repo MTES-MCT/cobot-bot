@@ -7,18 +7,9 @@ class Users {
     this.client.options.headers.authorization = token;
   }
 
-  async subscribe(channel, account, profile) {
-    const user = {
-      email: (profile.email) ? profile.email : '',
-      password: PasswordGenerator(12),
-      name: (profile.real_name) ? profile.real_name : '',
-      role: 1,
-      bots: {
-        channel,
-        channelUid: account.user_id,
-        token: account.access_token,
-      },
-    };
+  async subscribe(channel, user) {
+    /* eslint no-param-reassign: ["error", { "props": false }] */
+    user.password = PasswordGenerator(12);
     const mutation = `
       mutation subscribe($email: String, $password: String!, $name: String, $role: Int!, $bots: BotInput) {
         createUser(

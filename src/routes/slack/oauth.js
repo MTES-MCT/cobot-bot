@@ -19,7 +19,17 @@ module.exports = (server) => {
             server.logger.log('verbose', 'New Slack Bot User named %s', profile.real_name);
             try {
               // subscribe user in project database
-              await API(null).users.subscribe('Slack', account, profile);
+              const user = {
+                email: (profile.email) ? profile.email : '',
+                name: (profile.real_name) ? profile.real_name : '',
+                role: 1,
+                bots: {
+                  channel: 'Slack',
+                  channelUid: account.user_id,
+                  token: account.access_token,
+                },
+              };
+              await API(null).users.subscribe(user);
 
               // Log user
               const tokens = await API(null).auth.bybot('Slack', account.user_id);
