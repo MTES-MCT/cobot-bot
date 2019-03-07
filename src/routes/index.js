@@ -4,6 +4,7 @@ import SlackCommands from './slack/commands';
 import SlackOauth from './slack/oauth';
 
 import RocketChatOauth from './rocketChat/oauth';
+import RocketChatActions from './rocketChat/actions';
 
 module.exports = (server) => {
   SlackActions(server);
@@ -11,4 +12,5 @@ module.exports = (server) => {
   SlackOauth(server);
 
   RocketChatOauth(server);
+  RocketChatActions(server);
 };

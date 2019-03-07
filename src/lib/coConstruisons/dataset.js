@@ -4,9 +4,9 @@ class Dataset {
     this.client.options.headers.authorization = token;
   }
 
-  async fetch(source) {
-    const query = `query getDataSet($source: String){
-      DataSet(source: $source) {
+  async fetch(id) {
+    const query = `query getDataSet($id: ID!){
+      DataSet(id: $id) {
         _id
         question
         file
@@ -17,7 +17,7 @@ class Dataset {
       }
     }`;
     try {
-      const response = await this.client.request(query, { source });
+      const response = await this.client.request(query, { id });
       return response.DataSet;
     } catch (error) {
       if (error.response && error.response.errors) {

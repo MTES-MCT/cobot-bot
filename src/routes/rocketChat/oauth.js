@@ -38,8 +38,7 @@ module.exports = (server) => {
             // Log user
             const tokens = await API(null).auth.bybot('Ariane', account.data.user._id);
             const message = await API(tokens.userToken).messages.fetch('onboarding');
-
-            const rocketChat = new RocketChat();
+            const rocketChat = new RocketChat(response.data.data.authToken, response.data.data.userId);
             rocketChat.post(account.data.user.username, message.text[0].text, message.attachments);
 
             res.send(200);
