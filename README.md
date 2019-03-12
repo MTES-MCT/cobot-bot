@@ -10,7 +10,7 @@ Co-Bot est la pièce maitresse du projet "Co-Construisons". De plus amples infor
 
 Cet API nécessite que vous disposiez d'un environnement NodeJS (v9.10)
 Co-Bot nécessite que vous disposiez d'une "Slack App" correctement configuré de sorte à ce que vous disposiez des différents identifiants recquis pour dialoguer avec les APIs Slack.
-Co-Bot nécessite également l'accès à l'API co-coconstruisons, disponible ici [https://co-construisons.beta.gouv.fr](https://github.com/betagouv/co-constuisons-api.git). Cet API permet notamment de définir les éléments de langage du BOT ainsi que les actions de celui-ci.
+Co-Bot nécessite également l'accès à l'API co-coconstruisons, disponible ici [https://co-construisons.beta.gouv.fr](https://github.com/MTES-MCT/cobot-api.git). Cet API permet notamment de définir les éléments de langage du BOT ainsi que les actions de celui-ci.
 
 # Installation (dev mode)
 
